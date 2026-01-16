@@ -78,54 +78,22 @@ jobs:
         draft: false
         prerelease: contains(github.ref, 'beta') || contains(github.ref, 'alpha') || contains(github.ref, 'rc')
         generate_release_notes: true
-        name: CCSeva ${{ github.ref_name }}
+        name: Claude Meter ${{ github.ref_name }}
         body: |
-          ## 🚀 CCSeva ${{ github.ref_name }}
-          
-          A beautiful macOS menu bar app for real-time Claude Code usage tracking with live token monitoring, usage analytics, and smart notifications.
-          
-          ### 📥 Download Instructions
-          
-          **Choose the right version for your Mac:**
-          
-          - **🍎 Apple Silicon (M1/M2/M3/M4)**: Download `CCSeva-${{ github.ref_name }}-arm64.dmg`
-          - **💻 Intel Macs**: Download `CCSeva-${{ github.ref_name }}.dmg`
-          
-          > **Not sure which Mac you have?** Go to **Apple Menu → About This Mac**. If you see "Apple M1", "Apple M2", or "Apple M3", choose the ARM64 version. If you see "Intel", choose the Intel version.
-          
-          ### 📦 Installation
-          
-          1. Download the appropriate `.dmg` file from the assets below
-          2. Double-click the downloaded DMG file to mount it
-          3. Drag **CCSeva** to your **Applications** folder
-          4. Launch CCSeva from Applications or Spotlight
-          5. Grant necessary permissions when prompted (menu bar access)
-          
-          ### ✨ Features
-          
-          - **Real-time Usage Monitoring**: Live token consumption tracking
-          - **Smart Plan Detection**: Automatically detects your Claude plan (Pro/Max5/Max20)
-          - **Usage Analytics**: 7-day usage trends and burn rate calculations
-          - **Native Notifications**: Intelligent alerts at 70% and 90% usage thresholds
-          - **Beautiful Interface**: Clean, modern design with glass morphism effects
-          - **Menu Bar Integration**: Unobtrusive menu bar presence with percentage display
-          
-          ### 🔧 Requirements
-          
-          - **macOS 10.15** (Catalina) or later
-          - **Claude Code CLI** installed and configured
-          - Valid Claude API credentials in `~/.claude` directory
-          
-          ### 🛠️ Technical Details
-          
-          - Built with Electron and React
-          - Uses the `ccusage` npm package for data fetching
-          - Code-signed and notarized for security
-          - Supports both Intel and Apple Silicon architectures
-          
-          ---
-          
-          💡 **Need help?** [Open an issue](https://github.com/Iamshankhadeep/ccseva/issues) or check the [documentation](https://github.com/Iamshankhadeep/ccseva#readme).
+          ## Claude Meter ${{ github.ref_name }}
+
+          A macOS menu bar app for real-time Claude Code usage monitoring.
+
+          ### Downloads
+
+          - **Apple Silicon (M1/M2/M3/M4)**: `Claude.Meter-*-arm64.dmg`
+          - **Intel Macs**: `Claude.Meter-*.dmg`
+
+          ### Installation
+
+          1. Download the appropriate `.dmg` file
+          2. Open the DMG and drag **Claude Meter** to Applications
+          3. Launch from Applications or Spotlight
           
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
