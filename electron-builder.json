@@ -11,6 +11,7 @@
   "mac": {
     "category": "public.app-category.developer-tools",
     "icon": "assets/icon.icns",
+    "notarize": false,
     "target": [
       {
         "target": "dmg",
