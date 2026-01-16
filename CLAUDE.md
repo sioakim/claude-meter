@@ -11,6 +11,8 @@ Claude Meter is a macOS menu bar Electron application that monitors Claude Code 
 - **Single glance** - User should understand status in 1 second
 - **Honest labeling** - Clearly distinguish API data from calculations
 
+For detailed architecture and module documentation, see [docs/CODEBASE_MAP.md](docs/CODEBASE_MAP.md).
+
 ## Essential Commands
 
 ### Development
