@@ -84,7 +84,8 @@ export const StatusView: React.FC<StatusViewProps> = ({ stats }) => {
                   </p>
                   <Progress
                     value={oauth.fiveHour.utilization}
-                    className={`h-3 ${getStatusColor(oauth.fiveHour.utilization)}`}
+                    className="h-3"
+                    indicatorClassName={getStatusColor(oauth.fiveHour.utilization)}
                   />
                   <p className="text-xs text-neutral-500">
                     resets in {oauth.fiveHour.formattedTimeRemaining}
@@ -99,7 +100,8 @@ export const StatusView: React.FC<StatusViewProps> = ({ stats }) => {
                   </p>
                   <Progress
                     value={oauth.sevenDay.utilization}
-                    className={`h-3 ${getStatusColor(oauth.sevenDay.utilization)}`}
+                    className="h-3"
+                    indicatorClassName={getStatusColor(oauth.sevenDay.utilization)}
                   />
                   <p className="text-xs text-neutral-500">
                     resets in {oauth.sevenDay.formattedTimeRemaining}
