@@ -11,9 +11,7 @@
   "mac": {
     "category": "public.app-category.developer-tools",
     "icon": "assets/icon.icns",
-    "notarize": {
-      "teamId": "${APPLE_TEAM_ID}"
-    },
+    "notarize": true,
     "target": [
       {
         "target": "dmg",
