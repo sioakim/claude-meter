@@ -39,8 +39,7 @@ jobs:
       run: npm run build
     
     - name: Run tests
-      run: npm test
-      continue-on-error: true  # Tests might not exist yet
+      run: npm run test:run
 
   security:
     runs-on: ubuntu-latest

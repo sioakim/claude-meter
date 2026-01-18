@@ -23,9 +23,12 @@ jobs:
     
     - name: Run linting
       run: npm run lint
-       
+
     - name: Type check
       run: npx tsc --noEmit
+
+    - name: Run tests
+      run: npm run test:run
 
     - name: Build distributables
       run: npm run dist:mac
