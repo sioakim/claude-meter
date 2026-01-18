@@ -21,41 +21,55 @@ describe('SettingsPanel', () => {
   });
 
   it('renders menu bar display section', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
     expect(screen.getByText('Menu Bar Display')).toBeInTheDocument();
   });
 
   it('renders notifications section', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
     expect(screen.getByText('Notifications')).toBeInTheDocument();
   });
 
   it('renders about section with data source info', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
     expect(screen.getByText('Data source')).toBeInTheDocument();
     expect(screen.getByText('Claude OAuth API + ccusage')).toBeInTheDocument();
   });
 
   it('renders refresh interval info', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
     expect(screen.getByText('Refresh interval')).toBeInTheDocument();
     expect(screen.getByText('30 seconds')).toBeInTheDocument();
   });
 
   it('displays current warning threshold', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
     const warningInput = screen.getByLabelText('Warning at') as HTMLInputElement;
     expect(warningInput.value).toBe('70');
   });
 
   it('displays current critical threshold', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
     const criticalInput = screen.getByLabelText('Critical at') as HTMLInputElement;
     expect(criticalInput.value).toBe('90');
   });
 
   it('calls onUpdatePreferences when warning threshold changes', async () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
 
     const warningInput = screen.getByLabelText('Warning at') as HTMLInputElement;
 
@@ -71,7 +85,9 @@ describe('SettingsPanel', () => {
   });
 
   it('calls onUpdatePreferences when critical threshold changes', async () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
 
     const criticalInput = screen.getByLabelText('Critical at') as HTMLInputElement;
 
@@ -87,7 +103,9 @@ describe('SettingsPanel', () => {
   });
 
   it('shows cost source selector when display mode is "both"', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
     expect(screen.getByText('Cost Source')).toBeInTheDocument();
   });
 
@@ -104,7 +122,9 @@ describe('SettingsPanel', () => {
   });
 
   it('enforces min/max values on threshold inputs', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
 
     const warningInput = screen.getByLabelText('Warning at') as HTMLInputElement;
     expect(warningInput.min).toBe('0');
@@ -119,7 +139,9 @@ describe('SettingsPanel', () => {
 
   it('handles invalid input gracefully by defaulting to 0', async () => {
     const user = userEvent.setup();
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
 
     const warningInput = screen.getByLabelText('Warning at');
     await user.clear(warningInput);
@@ -136,12 +158,20 @@ describe('SettingsPanel', () => {
   });
 
   it('displays notification threshold description', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
-    expect(screen.getByText('Receive notifications when usage reaches these thresholds')).toBeInTheDocument();
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
+    expect(
+      screen.getByText('Receive notifications when usage reaches these thresholds')
+    ).toBeInTheDocument();
   });
 
   it('displays cost source description', () => {
-    render(<SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />);
-    expect(screen.getByText("Choose whether to show today's cost or the rolling 5-hour window cost")).toBeInTheDocument();
+    render(
+      <SettingsPanel preferences={mockPreferences} onUpdatePreferences={mockOnUpdatePreferences} />
+    );
+    expect(
+      screen.getByText("Choose whether to show today's cost or the rolling 5-hour window cost")
+    ).toBeInTheDocument();
   });
 });

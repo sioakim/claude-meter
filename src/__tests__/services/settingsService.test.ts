@@ -10,7 +10,8 @@ const mockMkdirSync = vi.fn();
 vi.mock('node:fs', () => ({
   existsSync: (path: string) => mockExistsSync(path),
   readFileSync: (path: string, encoding: string) => mockReadFileSync(path, encoding),
-  writeFileSync: (path: string, data: string, encoding: string) => mockWriteFileSync(path, data, encoding),
+  writeFileSync: (path: string, data: string, encoding: string) =>
+    mockWriteFileSync(path, data, encoding),
   mkdirSync: (path: string, options: any) => mockMkdirSync(path, options),
 }));
 
